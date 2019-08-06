@@ -20,7 +20,7 @@ The script "PFA_Learner.py" will run a MaxEnt model with Probabilistic Feature A
 * Attention probability (i.e. how likely are you to attend to each feature?)
 * The # of repetitions to run the model for
 
-So, for example, if you wanted to run the model on a pattern called "Ident_Bias", for 5 repetitions of 100 epochs, with a learning rate of .05 and an attention probability of .25, you would type the following command:
+So, for example, if you wanted to run the model on a pattern called "Ident_Bias", for 5 repetitions of 100 epochs, with a learning rate of .05 and an attention probability of .25, you would run the following command:
 
 ```shell
 python PFA_Learner.py 100 .05 Ident_Bias .25 5
@@ -28,6 +28,19 @@ python PFA_Learner.py 100 .05 Ident_Bias .25 5
 
 ### Input Files
 
-* A "Features" file that specifies all possible segments and the featural representations. Name of the file should follow the format "\[pattern label]\_Features.txt". 
+Examples of each of these input files are included in this repo.
+
+##### Feature File
+
+* Comma delimited file, specifying all possible segments and their featural representations (loosely following the format used by Hayes and Wilson 2008). 
+
+* First column gives the segments (first row of this column is blank).
+
+* First row gives the features (first column of this row is blank)
+
+* All other cells show whether that row's segment is "+" or "-" for that column's feature (only binary feature schemas are allowed).
+
+* Name of the file should follow the format "\[pattern label]\_Features.csv". 
+
 * A "TD" file that specifies the training data.
 * An "AmSegs" file that specifies which segments are ambiguous with which when each feature is ignored.
