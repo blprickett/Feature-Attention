@@ -32,7 +32,7 @@ Examples of the input files that I've used in my research so far are included in
 
 #### Feature File
 
-* Comma delimited file, specifying all possible segments and their featural representations (loosely following the format used by Hayes and Wilson 2008). 
+* Comma delimited file, specifying all possible segments and their featural representations (loosely following the format used by [Hayes and Wilson 2008](https://linguistics.ucla.edu/people/hayes/Phonotactics/)). 
 
 * First column gives the segments (first row of this column is blank).
 
