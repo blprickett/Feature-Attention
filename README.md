@@ -91,7 +91,16 @@ The script will create two kinds of files: a file with constraint violations for
 * Comma delimited file, showing the probabilities of each datum at each epoch of training.
 
 * The first row is just headers, labeling each column:
-  * Languages
+  * Language: which language the model was being trained on for this probability
+  * Rep: which repetition the probability is from (the number of repetitions per language is chosen by the user)
+  * Epoch: which epoch the probability is from
+  * Word: which datum the probability is for
+  * TD_Prob: the probability of the datum in the training data
+  * LE_Prob: the model's estimation of this datum's probability for this particular epoch, repetition, and language
+  
+* After this, each subsequent row represents a particular datum's probability at a particular epoch for a repetition and a language.
 
 ### References
 Hayes, B., & Wilson, C. (2008). A maximum entropy model of phonotactics and phonotactic learning. *Linguistic inquiry, 39(3)*, 379-440.
+Moreton, E., Pater, J., & Pertsova, K. (2017). Phonological concept learning. *Cognitive science, 41(1)*, 4-69.
+Pater, J., & Moreton, E. (2014). Structurally biased phonology: complexity in learning and typology. *The EFL Journal, 3(2)*.
