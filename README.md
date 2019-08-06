@@ -30,7 +30,7 @@ python PFA_Learner.py 100 .05 Ident_Bias .25 5
 
 Examples of each of these input files are included in this repo.
 
-##### Feature File
+#### Feature File
 
 * Comma delimited file, specifying all possible segments and their featural representations (loosely following the format used by Hayes and Wilson 2008). 
 
