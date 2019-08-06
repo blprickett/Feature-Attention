@@ -69,4 +69,4 @@ Examples of the input files that I've used in my research so far are included in
 * Name of the file should follow the format "\[pattern label]\_AmSegs.csv". 
 
 ### References
-Hayes, B., & Wilson, C. (2008). A maximum entropy model of phonotactics and phonotactic learning. Linguistic inquiry, 39(3), 379-440.
+Hayes, B., & Wilson, C. (2008). A maximum entropy model of phonotactics and phonotactic learning. *Linguistic inquiry, 39(3)*, 379-440.
