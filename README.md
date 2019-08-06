@@ -56,11 +56,11 @@ Examples of the input files that I've used in my research so far are included in
 
 #### Ambiguous Segment File
 
-* Comma delimited file, giving a set of symbols that each segment should be mapped to, given a particular set of ignored features. For example, if voicing is ignored, \[t\] and \[d\] might both be represented with the symbol "D".
+* Comma delimited file, giving symbols that each segment should be mapped to, given a particular set of ignored features. For example, if voicing is ignored, \[t\] and \[d\] might both be represented with the symbol "D".
 
 * Creation of this file could be automated (using the information in the feature file), but I found that it was easier to just to specify these by hand.
 
-* The first column specifies which features are ignored (first row of this column is blank). If more than one feature is ignored, seperate them with the "+" symbol.
+* The first column specifies which features are ignored (first row of this column is blank). If more than one feature is ignored, seperate them with the "+" symbol. Every combination of the features from the feature file must be represented here.
 
 * The first row specifies which segment is mapping to the ambiguous symbols below it (first column of this row is blank). This should be the same as the first row in your features file.
 
