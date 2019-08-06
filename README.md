@@ -88,7 +88,7 @@ The script will create two kinds of files: a file with constraint violations for
 
 ### Probabilities
 
-* Comma delimited file, showing the probabilities of each datum at each epoch of training.
+* Comma delimited file, designed to save information about the model's learning curves and generalization to withheld data.
 
 * The first row is just headers, labeling each column:
   * Language: which language the model was being trained on for this probability
@@ -98,7 +98,9 @@ The script will create two kinds of files: a file with constraint violations for
   * TD_Prob: the probability of the datum in the training data
   * LE_Prob: the model's estimation of this datum's probability for this particular epoch, repetition, and language
   
-* After this, each subsequent row represents a particular datum's probability at a particular epoch for a repetition and a language.
+* After this, each subsequent row represents a particular datum's probability at a particular epoch for each repetition and language.
+
+* The name of this file will follow the format "\[pattern label\]\_output (attention=\[attention probability\]).csv".
 
 ### References
 Hayes, B., & Wilson, C. (2008). A maximum entropy model of phonotactics and phonotactic learning. *Linguistic inquiry, 39(3)*, 379-440.
