@@ -103,6 +103,6 @@ The script will create two kinds of files: a file with constraint violations for
 * The name of this file will follow the format "\[pattern label\]\_output (attention=\[attention probability\]).csv".
 
 ### References
-Hayes, B., & Wilson, C. (2008). A maximum entropy model of phonotactics and phonotactic learning. *Linguistic inquiry, 39(3)*, 379-440.
-Moreton, E., Pater, J., & Pertsova, K. (2017). Phonological concept learning. *Cognitive science, 41(1)*, 4-69.
-Pater, J., & Moreton, E. (2014). Structurally biased phonology: complexity in learning and typology. *The EFL Journal, 3(2)*.
+* Hayes, B., & Wilson, C. (2008). A maximum entropy model of phonotactics and phonotactic learning. *Linguistic inquiry, 39(3)*, 379-440.
+* Moreton, E., Pater, J., & Pertsova, K. (2017). Phonological concept learning. *Cognitive science, 41(1)*, 4-69.
+* Pater, J., & Moreton, E. (2014). Structurally biased phonology: complexity in learning and typology. *The EFL Journal, 3(2)*.
