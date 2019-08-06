@@ -67,3 +67,6 @@ Examples of the input files that I've used in my research so far are included in
 * All other cells show what symbol represents the column's segment when the row's set of features are being ignored. The script is case-sensitive so you can treat upper and lowercase letters as seperate symbols.
 
 * Name of the file should follow the format "\[pattern label]\_AmSegs.csv". 
+
+### References
+Hayes, B., & Wilson, C. (2008). A maximum entropy model of phonotactics and phonotactic learning. Linguistic inquiry, 39(3), 379-440.
