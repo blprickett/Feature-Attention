@@ -20,4 +20,6 @@ It takes five inline arguments:
 
 And requires three kinds of input file:
 
-* A "Features" file that specifies all possible segments and the featural representations. Name of the file should be "\[pattern label]\_Features.txt". 
+* A "Features" file that specifies all possible segments and the featural representations. Name of the file should follow the format "\[pattern label]\_Features.txt". 
+* A "TD" file that specifies the training data.
+* An "AmSegs" file that specifies which segments are ambiguous with which when each feature is ignored.
