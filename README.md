@@ -28,7 +28,7 @@ python PFA_Learner.py 100 .05 Ident_Bias .25 5
 
 ### Input Files
 
-Examples of each of these input files are included in this repo.
+Examples of each type of input file are included in this repo. To run the script all of these must be in the same directory as "PFA_Learner.py" and follow the naming conventions laid out below.
 
 #### Feature File
 
@@ -42,5 +42,16 @@ Examples of each of these input files are included in this repo.
 
 * Name of the file should follow the format "\[pattern label]\_Features.csv". 
 
-* A "TD" file that specifies the training data.
+#### Training Data File
+
+* Comma delimited file, showing the attested words in each language. The model can only handle phonotactic learning at this point, so no information about underlying representations should be given.
+
+* Each row is either a new language or a set of withheld data to test the model on. 
+
+* For languages, give the name of the language in the first column of the row. For withheld data, the first column should say "Nonce".
+
+* Every subsequent column represents a training datum in that language. The words you specify are treated as tokens, not types. So if you want to test the effects of frequency, you need to repeat words that are meant to be more frequent.
+
+#### Ambiguous Segment File
+
 * An "AmSegs" file that specifies which segments are ambiguous with which when each feature is ignored.
