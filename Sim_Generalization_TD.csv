@@ -1,0 +1,13 @@
+b,d,g,v,z,Z,,,,,,,
+d,b,g,v,z,Z,,,,,,,
+g,d,b,v,z,Z,,,,,,,
+v,d,g,b,z,Z,,,,,,,
+z,d,g,v,b,Z,,,,,,,
+Z,d,g,v,z,b,,,,,,,
+p,t,k,f,s,S,,,,,,,
+t,p,k,f,s,S,,,,,,,
+k,p,t,f,s,S,,,,,,,
+f,p,t,k,s,S,,,,,,,
+s,p,t,k,f,S,,,,,,,
+S,p,t,k,f,s,,,,,,,
+Nonce,p,b,f,v,t,d,s,z,S,Z,k,g
