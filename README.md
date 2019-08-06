@@ -1,6 +1,6 @@
 # Probabilistic Feature Attention
 
-The script "PFA_Learner.py" will run a MaxEnt model with Probabilistic Feature Attention (PFA), using Python 3. To read more about PFA, see [this handout](https://people.umass.edu/bprickett/Downloads/UNC%20Colloquium%20Handout%20-%20Prickett%202019.pdf) or [this manuscript](https://people.umass.edu/bprickett/Downloads/PFA-Manuscript-Prickett2019.pdf). [Click here](https://www.python.org/downloads/) for instructions on installing Python 3.
+The script "PFA_Learner.py" will run a MaxEnt model with Probabilistic Feature Attention (PFA), using Python 3. To read more about PFA (or this model more generally), see [this handout](https://people.umass.edu/bprickett/Downloads/UNC%20Colloquium%20Handout%20-%20Prickett%202019.pdf) or [this manuscript](https://people.umass.edu/bprickett/Downloads/PFA-Manuscript-Prickett2019.pdf). [Click here](https://www.python.org/downloads/) for instructions on installing Python 3.
 
 ### Dependencies
 
@@ -67,6 +67,31 @@ Examples of the input files that I've used in my research so far are included in
 * All other cells show what symbol represents the column's segment when the row's set of features are being ignored. The script is case-sensitive so you can treat upper and lowercase letters as seperate symbols.
 
 * Name of the file should follow the format "\[pattern label]\_AmSegs.csv". 
+
+### Output Files
+
+The script will create two kinds of files: a file with constraint violations for each datum and a file with probabilities for each datum in each epoch. The former is created only the first time the script is run for each attention probability and can take some time to produce. The latter is created every time the script is run and includes probabilities for training and testing (i.e. withheld) data.
+
+#### Constraint Violations
+
+* Comma delimited file, showing the violations for each datum. 
+
+* These are not meant to be human-readable, so no labels for data or for constraints are given in the file. 
+
+* Each row represents a different datum (appearing in the order that they're given in the Training Data file) and each column represents a different constraint (appearing in the order that the model constructs them in).
+
+* The model uses a conjunctive constraint set, meaning that all possible combinations of the features in the features file are represented in the constraints (for more on this, see Pater and Moreton 2014, Moreton et al. 2017). 
+
+* The length (in segments) of the constraints will match the length of the longest training datum.
+
+* The name of this file will follow the format "\[pattern label]\_Violations (attention=\[attention probability\]).csv". 
+
+### Probabilities
+
+* Comma delimited file, showing the probabilities of each datum at each epoch of training.
+
+* The first row is just headers, labeling each column:
+  * Languages
 
 ### References
 Hayes, B., & Wilson, C. (2008). A maximum entropy model of phonotactics and phonotactic learning. *Linguistic inquiry, 39(3)*, 379-440.
