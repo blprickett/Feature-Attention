@@ -86,7 +86,7 @@ The script will create two kinds of files: a file with constraint violations for
 
 * The name of this file will follow the format "\[pattern label]\_Violations (attention=\[attention probability\]).csv". 
 
-### Probabilities
+#### Probabilities
 
 * Comma delimited file, designed to save information about the model's learning curves and generalization to withheld data.
 
