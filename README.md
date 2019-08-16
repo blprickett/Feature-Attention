@@ -16,7 +16,7 @@ The script "PFA_Learner.py" will run a MaxEnt model with Probabilistic Feature A
 
 * The # of epochs (i.e. passes through the data) to train the model for
 * The learning rate
-* A pattern label (see below for the ones I used for the manuscript above)
+* A pattern label (to be used in the input and output file names)
 * Attention probability (i.e. how likely are you to attend to each feature?)
 * The # of repetitions to run the model for
 
