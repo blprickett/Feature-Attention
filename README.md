@@ -80,9 +80,9 @@ The script will create two kinds of files: a file with constraint violations for
 
 * Each row represents a different datum (appearing in the order that they're given in the Training Data file) and each column represents a different constraint (appearing in the order that the model constructs them in).
 
-* The model uses a conjunctive constraint set, meaning that all possible combinations of the features in the features file are represented in the constraints (for more on this, see Pater and Moreton 2014, Moreton et al. 2017). 
+* The model uses a conjunctive constraint set, meaning that all possible combinations of the features in the feature file are represented in the constraints (for more on this, see Pater and Moreton 2014, Moreton et al. 2017). 
 
-* The length (in segments) of the constraints will match the length of the longest training datum.
+* The maximum length (in segments) of the constraints will match the length of the longest training datum.
 
 * The name of this file will follow the format "\[pattern label]\_Violations (attention=\[attention probability\]).csv". 
 
