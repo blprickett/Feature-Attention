@@ -88,7 +88,7 @@ The script will create two kinds of files: a file with constraint violations for
 
 #### Probabilities
 
-* Comma delimited file, designed to save information about the model's learning curves and generalization to withheld data.
+* Comma delimited file, designed to save information about the model's learning curves and generalization to withheld data. Each row is a different probability of interest.
 
 * The first row is just headers, labeling each column:
   * Language: which language the model was being trained on for this probability
