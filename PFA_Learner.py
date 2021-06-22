@@ -4,19 +4,22 @@ import mpmath
 from itertools import product, combinations, combinations_with_replacement
 from random import uniform, shuffle
 from sympy.utilities.iterables import multiset_permutations
+from sys import argv
 
 ######USER SETTINGS#############################
-EPOCHS = int(argv[1]) #How many updates will happen (I used 200)
-ETA = float(argv[2]) #Learning rate (I used .05)
-PATTERN =  argv[3] #Label for the pattern its learning--this should match your training data files
+EPOCHS = int(argv[1]) #How many updates will happen 
+ETA = float(argv[2]) #Learning rate
+
+PATTERN = argv[3] #This should match the label used in your training files
 #The pattern names I used were:
+#"Ident_Gen[1-4]"       Generalization of identity (Berent 2013; Gallagher 2013), numbered by order that the simulations appear in the paper
 #"Ident_Bias"           Bias for identity-based phonotactics (Gallagher 2013)
-#"Ident_Generalization  Generalization of identity (Berent 2013; Gallagher 2013)
-#"IntraDim_Bias"        Bias for intradimensional patterns (Moreton 2012)
+#"IntraDim_Bias[1,2]"   Bias for intradimensional patterns (Moreton 2012), numbered by order that the simulations appear in the paper
 #"Sim_Generalization"   Similarity-based generalization (Cristia et al 2013)
-ATTENTION_PROB = float(argv[4]) #Probability that each feature will be attended to (1=vanilla MaxEnt)
-REPS = int(argv[5]) #Repitions (I used 15--this can take a while though)
-WD= "" #If you want the script to use a different working directory, you can hard-code that here
+
+ATTENTION_PROB = float(argv[4]) #Probability that each feature will be attended to (1=vanilla MaxEnt. .25=PFA model in paper)
+REPS = int(argv[5]) #Repitions
+
 ################################################     
 
 ######FUNCTIONS#################################      
@@ -89,7 +92,7 @@ def grad_descent_update (weights, viols, td_probs, attention, this_datum, eta=.0
 
 ######PROCESS INPUT FILES########################
 #Feature file (can only handle binary features):
-feature_file = open(WD+PATTERN+"_Features.csv", "r")
+feature_file = open(PATTERN+"_Features.csv", "r")
 feature_list = feature_file.readline().rstrip().split(",")[1:]
 features = { #Dictionary mapping valued features to their segments.
                 valued_feature:[] for valued_feature in \
@@ -106,7 +109,7 @@ for row in feature_file.readlines():
             SIGMA.append(this_segment)
 
 #Training data file:
-training_file = open(WD+PATTERN+"_TD.csv", "r")
+training_file = open(PATTERN+"_TD.csv", "r")
 languages = {}
 max_word_length = 0
 nonce_words = []
@@ -125,7 +128,7 @@ nonce_words = [nw for nw in nonce_words if nw != ""]
                
 #Ambiguous segment file:
 if ATTENTION_PROB < 1.0:
-    ambig_seg_file = open(WD+PATTERN+"_AmSegs.csv")
+    ambig_seg_file = open(PATTERN+"_AmSegs.csv")
     unambig2ambig = {}
     ambig2unambig = {}
     firstRow = True
@@ -190,7 +193,7 @@ CON_names = []
 
 ##Unigram constraints:
 #Constraints that refer to more than one feature:
-for feat_num in range(2,int(round((len(features.keys())/2)+1))):
+for feat_num in range(2,int((len(features.keys())/2)+1)): #This looks weird, but our "features" dict has every feat, value (+&-), so we divide by 2
     these_combos = list(combinations(features.keys(), r=feat_num))
     for bundle in these_combos:
         bundle_string = "".join(bundle)
@@ -280,25 +283,25 @@ CON_names = new_names
 w = np.array([0.0 for c in CON_names])
 
 ##Violation profiles:                    
-print ("Finding violation profiles...")
+print("Finding violation profiles...")
 try:
-    v_file = open(WD+PATTERN+"_Violations (attention="+str(ATTENTION_PROB)+").csv", "r")
-    print ("...from file.")
+    v_file = open(PATTERN+"_Violations (attention="+str(ATTENTION_PROB)+").csv", "r")
+    print("...from file.")
     v = []
     for datum in v_file.readlines():
         v.append([float(d) for d in datum.split(",")])
     v = np.array(v)
     v_file.close()
 except:   
-    print ("...from scratch. Might take a while (only have to do it once per attention prob, though).") 
+    print("...from scratch. Might take a while (only have to do it once per attention prob, though).")
     v = np.array([[-1.0 * len(re.findall(c, word)) for c in CON_regexes]\
                 for word in SIGMA_STAR]) 
-    np.savetxt(WD+PATTERN+"_Violations (attention="+str(ATTENTION_PROB)+").csv", v, delimiter=",", newline="\n")
+    np.savetxt(PATTERN+"_Violations (attention="+str(ATTENTION_PROB)+").csv", v, delimiter=",", newline="\n")
 ################################################ 
 
 ######SIMULATIONS###############################
 last_w = []
-output_file = open(WD+PATTERN+"_output (attention="+str(ATTENTION_PROB)+").csv", "w")  
+output_file = open(PATTERN+"_output (attention="+str(ATTENTION_PROB)+").csv", "w")  
 output_file.write("Language,Rep,Epoch,Word,TD_Prob,LE_Prob\n")
 for lang in languages.keys():
     #Set up learning data probabilities for each language:
@@ -330,9 +333,9 @@ for lang in languages.keys():
 				#Sometimes my version of python crashes on this print statement...
 				#...fixed this with a try-except:
                 try:
-                    print ("Epoch: " + str(epoch), ", Pattern: " + str(lang), ", Rep: " + str(rep))
+                    print("Epoch: " + str(epoch), ", Pattern: " + str(lang), ", Rep: " + str(rep))
                 except:
-                    print ("Epoch: " + str(epoch), ", Pattern: " + str(lang), ", Rep: " + str(rep))
+                    print("Epoch: " + str(epoch), ", Pattern: " + str(lang), ", Rep: " + str(rep))
                     
             #Get our model's current estimation of the unambiguous data:
             current_probs = get_predicted_probs(w, v)
