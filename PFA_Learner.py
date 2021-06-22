@@ -1,7 +1,6 @@
 import numpy as np
 import re
-from matplotlib.pyplot import plot, ylabel, show, legend, xlabel, title
-from sys import exit, argv
+import mpmath
 from itertools import product, combinations, combinations_with_replacement
 from random import uniform, shuffle
 from sympy.utilities.iterables import multiset_permutations
