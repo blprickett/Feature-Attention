@@ -1,6 +1,6 @@
 # Probabilistic Feature Attention
 
-The script "PFA_Learner.py" will run a MaxEnt model with Probabilistic Feature Attention (PFA), using Python 3. To read more about PFA (or this model more generally), see [this manuscript](https://brandon-prickett.com/wp-content/uploads/2021/06/Prickett_2021_PFA.pdf).
+The script "PFA_Learner.py" will run a MaxEnt model with Probabilistic Feature Attention (PFA), using Python 3. To read more about PFA (or this model more generally), see [this article](https://doi.org/10.1162/ling_a_00440).
 
 ### Dependencies
 
