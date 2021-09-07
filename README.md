@@ -25,11 +25,11 @@ python PFA_Learner.py 100 .05 Ident_Bias .25 5
 
 ### Input Files
 
-Examples of the input files that I used for the paper linked to above are included in this repo. To run the script, all input files must be in the same directory as "PFA_Learner.py" and follow the naming conventions laid out below. The labels I used for the simulations in the paper are:
+Examples of the input files that I used for the article linked to above are included. To run the script, all input files must be in the same directory as "PFA_Learner.py" and follow the naming conventions laid out below. The labels I used for the simulations in the article are:
 
-* "Ident_Gen[1-4]"       Generalization of identity (Berent 2013; Gallagher 2013), numbered by order that the simulations appear in the paper
+* "Ident_Gen[1-4]"       Generalization of identity (Berent 2013; Gallagher 2013), numbered by the order that the simulations appear in the article
 * "Ident_Bias"           Bias for identity-based phonotactics (Gallagher 2013)
-* "IntraDim_Bias[1,2]"   Bias for intradimensional patterns (Moreton 2012), numbered by order that the simulations appear in the paper
+* "IntraDim_Bias[1,2]"   Bias for intradimensional patterns (Moreton 2012), numbered by the order that the simulations appear in the article
 * "Sim_Generalization"   Similarity-based generalization (Cristia et al 2013)
 
 
